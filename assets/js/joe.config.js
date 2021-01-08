@@ -901,6 +901,7 @@
                         token: window.JOE_CONFIG.DOCUMENT_BAIDU_TOKEN,
                         domain: window.location.hostname
                     },
+		    beforeSend: res => {$('#baiduIncluded').html('正在推送中');},
                     success: res => {
                         let obj = {
                             'site error': '站点未验证！',
