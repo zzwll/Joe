@@ -660,7 +660,7 @@
                 logo: 'OωO表情',
                 container: document.getElementsByClassName('OwO')[0],
                 target: document.getElementsByClassName('OwO-textarea')[0],
-                api: '/usr/themes/Typecho-Joe-Theme/OwO.json',
+                api: '/usr/themes/Joe/OwO.json',
                 position: 'down',
                 width: '100%',
                 maxHeight: '250px'
