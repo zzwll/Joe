@@ -889,6 +889,10 @@
                     } else {
                         $('#baiduIncluded').html('百度已收录');
                         $('#baiduIncluded').css('color', '#3bca72');
+			$('#baiduIncluded').on('click',function(){
+                            window.location.href = 'https://www.baidu.com/s?wd=' + $('title').html();
+                        })
+                        $('#baiduIncluded').css('cursor', 'pointer');
                     }
                 }
             });
