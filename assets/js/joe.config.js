@@ -877,7 +877,7 @@
                 url: window.JOE_CONFIG.THEME_URL + '/baiduRecord.php?url=' + encodeURI(window.location.href),
                 method: 'get',
                 success(res) {
-                    if (!res.success) {
+                    if (!res.success || res.data.baidu === '') {
                         $('#baiduIncluded').html('查询失败');
                         $('#baiduIncluded').css('color', '#f56c6c');
                     } else if (res.data.baidu === '未收录') {
@@ -886,11 +886,11 @@
                         } else {
                             $('#baiduIncluded').html('<span>未收录，点击推送</span>');
                         }
-                    } else {
+                    } else if (res.data.baidu === '已收录') {
                         $('#baiduIncluded').html('百度已收录');
                         $('#baiduIncluded').css('color', '#3bca72');
-			$('#baiduIncluded').on('click',function(){
-                            window.location.href = 'https://www.baidu.com/s?wd=' + $('title').html();
+                        $('#baiduIncluded').on('click',function(){
+                            window.open('https://www.baidu.com/s?wd=' + $('title').html());
                         })
                         $('#baiduIncluded').css('cursor', 'pointer');
                     }
