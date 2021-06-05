@@ -876,6 +876,7 @@
             $.ajax({
                 url: window.JOE_CONFIG.THEME_URL + '/baiduRecord.php?url=' + encodeURI(window.location.href),
                 method: 'get',
+		dataType: 'json',    
                 success(res) {
                     if (!res.success || res.data.baidu === '') {
                         $('#baiduIncluded').html('查询失败');
